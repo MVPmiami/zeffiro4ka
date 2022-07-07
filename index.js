@@ -75,23 +75,33 @@ const punishFunc = (name, imgs) => {
         })
       } else {
         let src = randomImg(imgs)
+        let firstName = ''
+        if (name === 'btn_2') {
+          firstName = 'Сережа'
+        }
+        if (name === 'btn_3') {
+          firstName = 'Игорь'
+        }
+        if (name === 'btn_4') {
+          firstName = 'Вован'
+        }
         await ctx.replyWithPhoto({
           source: src,
         })
         if (src === './img/falos.jpg') {
-          await ctx.replyWithHTML(`${texts.text[1]}`, {
+          await ctx.replyWithHTML(`${firstName} ${texts.text[1]}`, {
             disable_web_page_preview: true,
           })
         } else if (src === './img/Pinok.jpg') {
-          await ctx.replyWithHTML(`${texts.text[2]}`, {
+          await ctx.replyWithHTML(`${firstName} ${texts.text[2]}`, {
             disable_web_page_preview: true,
           })
         } else if (src === './img/podzatilnik.jpg') {
-          await ctx.replyWithHTML(`${texts.text[3]}`, {
+          await ctx.replyWithHTML(`${firstName} ${texts.text[3]}`, {
             disable_web_page_preview: true,
           })
         } else if (src === './img/rasstrel.jpg') {
-          await ctx.replyWithHTML(`${texts.text[4]}`, {
+          await ctx.replyWithHTML(`${firstName} ${texts.text[4]}`, {
             disable_web_page_preview: true,
           })
         }
