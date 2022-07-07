@@ -5,15 +5,32 @@ const imgs = require('./const')
 const texts = require('./const')
 
 const bot = new Telegraf(process.env.BOT_TOKEN)
-bot.start((ctx) =>
+bot.start((ctx) => {
   ctx.reply(
     `Здорова ${
       ctx.message.from.first_name === 'Сергей'
         ? 'Серега-фидер'
         : ctx.message.from.first_name
     }`,
-  ),
-)
+  )
+  setInterval(() => {
+    ctx.replyWithHTML(`Ну шо обсудим, мб кто покатать хочет?`, {
+      disable_web_page_preview: true,
+    })
+  }, 1800000)
+
+  setInterval(() => {
+    ctx.replyWithHTML(`Всем здоровки, Серега перестал фидить?`, {
+      disable_web_page_preview: true,
+    })
+  }, 86400000)
+
+  setInterval(() => {
+    ctx.replyWithHTML(`Мб кого надо покарать? я это умею кста`, {
+      disable_web_page_preview: true,
+    })
+  }, 3600000)
+})
 bot.help((ctx) => ctx.reply(`${commands.commands}`))
 bot.on('sticker', (ctx) => ctx.reply('👍'))
 bot.hears('здоров', (ctx) =>
