@@ -20,6 +20,12 @@ bot.start((ctx) => {
   }, 1800000)
 
   setInterval(() => {
+    ctx.replyWithHTML(`Паладины долбяться в попку азазаза`, {
+      disable_web_page_preview: true,
+    })
+  }, 5600000)
+
+  setInterval(() => {
     ctx.replyWithHTML(`Всем здоровки, Серега перестал фидить?`, {
       disable_web_page_preview: true,
     })
@@ -33,6 +39,36 @@ bot.start((ctx) => {
 })
 bot.help((ctx) => ctx.reply(`${commands.commands}`))
 bot.on('sticker', (ctx) => ctx.reply('👍'))
+bot.hears('лол', (ctx) => {
+  ctx.reply(`Бля орнул тоже`)
+})
+bot.hears('кек', (ctx) => {
+  ctx.reply(`ахаха втф XD`)
+})
+bot.hears('рофл', (ctx) => {
+  ctx.reply(`пырснул когда проорался`)
+})
+bot.hears('пздц', (ctx) => {
+  ctx.reply(`ай впизду эту хуйню соглы`)
+})
+bot.hears('да', (ctx) => {
+  ctx.reply(`хуй на`)
+})
+bot.hears('держи два', (ctx) => {
+  ctx.reply(`держи три`)
+})
+bot.hears('300', (ctx) => {
+  ctx.reply(`остоси у тракториста`)
+})
+bot.hears('триста', (ctx) => {
+  ctx.reply(`остоси у тракториста`)
+})
+bot.hears('тристо', (ctx) => {
+  ctx.reply(`остоси у тракториста`)
+})
+bot.hears('нет', (ctx) => {
+  ctx.reply(`пидора ответ`)
+})
 bot.hears('здоров', (ctx) =>
   ctx.reply(
     `Здорова ${
