@@ -13,17 +13,17 @@ bot.start((ctx) => {
         : ctx.message.from.first_name
     }`,
   )
-  setInterval(() => {
+  /*setInterval(() => {
     ctx.replyWithHTML(`Ну шо обсудим, мб кто покатать хочет?`, {
       disable_web_page_preview: true,
     })
-  }, 4600000)
+  }, 4600000)*/
 
   setInterval(() => {
     ctx.replyWithHTML(`Паладины долбяться в попку азазаза`, {
       disable_web_page_preview: true,
     })
-  }, 5600000)
+  }, 8600000)
 
   setInterval(() => {
     ctx.replyWithHTML(`Всем здоровки, Серега перестал фидить?`, {
