@@ -17,7 +17,7 @@ bot.start((ctx) => {
     ctx.replyWithHTML(`Ну шо обсудим, мб кто покатать хочет?`, {
       disable_web_page_preview: true,
     })
-  }, 1800000)
+  }, 4600000)
 
   setInterval(() => {
     ctx.replyWithHTML(`Паладины долбяться в попку азазаза`, {
@@ -35,7 +35,7 @@ bot.start((ctx) => {
     ctx.replyWithHTML(`Мб кого надо покарать? я это умею кста`, {
       disable_web_page_preview: true,
     })
-  }, 3600000)
+  }, 76400000)
 })
 bot.help((ctx) => ctx.reply(`${commands.commands}`))
 bot.on('sticker', (ctx) => ctx.reply('👍'))
@@ -159,45 +159,39 @@ const punishFunc = (name, imgs) => {
   bot.action(name, async (ctx) => {
     try {
       await ctx.answerCbQuery()
+      let src = randomImg(imgs)
+      let firstName = ''
       if (name === 'btn_1') {
-        await ctx.replyWithPhoto({
-          source: './img/Lexa.jpg',
-        })
-        await ctx.replyWithHTML(texts.text[0], {
+        firstName = 'Леха'
+      }
+      if (name === 'btn_2') {
+        firstName = 'Сережа'
+      }
+      if (name === 'btn_3') {
+        firstName = 'Игорь'
+      }
+      if (name === 'btn_4') {
+        firstName = 'Вован'
+      }
+      await ctx.replyWithPhoto({
+        source: src,
+      })
+      if (src === './img/falos.jpg') {
+        await ctx.replyWithHTML(`${firstName} ${texts.text[1]}`, {
           disable_web_page_preview: true,
         })
-      } else {
-        let src = randomImg(imgs)
-        let firstName = ''
-        if (name === 'btn_2') {
-          firstName = 'Сережа'
-        }
-        if (name === 'btn_3') {
-          firstName = 'Игорь'
-        }
-        if (name === 'btn_4') {
-          firstName = 'Вован'
-        }
-        await ctx.replyWithPhoto({
-          source: src,
+      } else if (src === './img/Pinok.jpg') {
+        await ctx.replyWithHTML(`${firstName} ${texts.text[2]}`, {
+          disable_web_page_preview: true,
         })
-        if (src === './img/falos.jpg') {
-          await ctx.replyWithHTML(`${firstName} ${texts.text[1]}`, {
-            disable_web_page_preview: true,
-          })
-        } else if (src === './img/Pinok.jpg') {
-          await ctx.replyWithHTML(`${firstName} ${texts.text[2]}`, {
-            disable_web_page_preview: true,
-          })
-        } else if (src === './img/podzatilnik.jpg') {
-          await ctx.replyWithHTML(`${firstName} ${texts.text[3]}`, {
-            disable_web_page_preview: true,
-          })
-        } else if (src === './img/rasstrel.jpg') {
-          await ctx.replyWithHTML(`${firstName} ${texts.text[4]}`, {
-            disable_web_page_preview: true,
-          })
-        }
+      } else if (src === './img/podzatilnik.jpg') {
+        await ctx.replyWithHTML(`${firstName} ${texts.text[3]}`, {
+          disable_web_page_preview: true,
+        })
+      } else if (src === './img/rasstrel.jpg') {
+        await ctx.replyWithHTML(`${firstName} ${texts.text[4]}`, {
+          disable_web_page_preview: true,
+        })
       }
     } catch (error) {
       console.log(error)
